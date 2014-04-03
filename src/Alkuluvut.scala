@@ -1,32 +1,32 @@
 
 
 object Alkuluvut extends App{
-  
-
-   println("Give number")
-   var number = readInt();
-   val list: List[Int] = calculate(number);
- println(list);
-
-   def factorial(n: Int): Int = {
-    if(n==0||n==1) {
-      1;
-    } else {
-      n*factorial(n-1)
+  println("Anna luku")
+  var luku = readInt
+  var list = List[Int](luku);
+  var i = 2
+  while(list.size < luku) {
+    if (isPrime(i)) {
+      list :+ i
     }
   }
-   
-   def calculate(k: Int): List[Int]  = {
-     var list = List[Int]();
-     var n = 1;
-     while(list.length < k) {
-       var c = factorial(n)
-       var prime = 2 + (2*c%(n+1))
-       if (!list.contains(prime) && prime > 0) {
-         list = list :+ prime;
-       }
-       n+=1
-     }
-     list
-   }
+  
+
+def isPrime(n: Int) : Boolean = {
+
+	var i = 2;
+ 
+	if (n == 2) {
+		 true;	
+	}
+ 
+	while (i < n) {
+		if (n % i == 0) {
+			 false;
+		}
+		i+=1;
+	}
+ 
+	 true;
+}
  }
