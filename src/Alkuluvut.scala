@@ -3,30 +3,31 @@
 object Alkuluvut extends App{
   println("Anna luku")
   var luku = readInt
-  var list = List[Int](luku);
-  var i = 2
-  while(list.size < luku) {
-    if (isPrime(i)) {
-      list :+ i
-    }
+  var list = scala.collection.mutable.MutableList[Int]();
+  var i = 2 // i += lower
+  while(list.size < luku) { //while(i < upper)
+    if (isPrime(i)) {  
+      list += i   
+       }
+    i += 1
   }
-  
+
+  println(list);
 
 def isPrime(n: Int) : Boolean = {
 
 	var i = 2;
  
 	if (n == 2) {
-		 true;	
+		return true;	
 	}
  
 	while (i < n) {
 		if (n % i == 0) {
-			 false;
+			 return false;
 		}
 		i+=1;
 	}
- 
-	 true;
+ 	return true;
 }
  }
